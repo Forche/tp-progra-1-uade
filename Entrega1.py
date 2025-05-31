@@ -20,70 +20,6 @@ Pendientes:
 # FUNCIONES
 #----------------------------------------------------------------------------------------------
 
-def printCamelCase(texto):
-    resultado = ""
-    for i, c in enumerate(texto):
-        if c.isupper() and i != 0:
-            resultado += " "
-        resultado += c
-    return resultado.capitalize()
-
-def inputCampo(campo, tipo, entidades=None, actual=None):
-    printCampo = printCamelCase(campo)
-    # Para crear, actual es None. Para editar, actual tiene el valor actual.
-    if tipo == dict:
-        resultado = {} if actual is None else actual.copy()
-        contador = len(resultado) + 1
-        while True:
-            valor = input(f"Ingrese un valor para {printCampo} (o 'fin' para terminar): ")
-            if valor.lower() == "fin":
-                break
-            resultado[f"{campo[:-1]}{contador}"] = valor
-            contador += 1
-        return resultado
-    elif tipo == bool:
-        if actual is not None:
-            entrada = input(f"{printCampo} (si/no, actual: {'sí' if actual else 'no'}): ").strip().lower()
-            if entrada == "":
-                return actual
-        else:
-            entrada = input(f"{printCampo} (si/no): ").strip().lower()
-        return entrada == "si"
-    elif tipo == int:
-        while True:
-            prompt = f"{printCampo}" + (f" (actual: {actual})" if actual is not None else "") + ": "
-            entrada = input(prompt)
-            if entrada == "" and actual is not None:
-                return actual
-            try:
-                return int(entrada)
-            except ValueError:
-                print("Debe ingresar un número entero.")
-    elif tipo == float:
-        while True:
-            prompt = f"{printCampo}" + (f" (actual: {actual})" if actual is not None else "") + ": "
-            entrada = input(prompt)
-            if entrada == "" and actual is not None:
-                return actual
-            try:
-                return float(entrada)
-            except ValueError:
-                print("Debe ingresar un número decimal.")
-    else:  # str u otros
-        if campo == "id" and entidades is not None:
-            while True:
-                id_entidad = input("ID: ") if actual is None else input(f"ID (actual: {actual}): ")
-                if id_entidad == "" and actual is not None:
-                    return actual
-                if id_entidad in entidades and (actual is None or id_entidad != actual):
-                    print("El ID ya existe. Intente con otro.")
-                else:
-                    return id_entidad
-        else:
-            entrada = input(f"{printCampo}" + (f" (actual: {actual})" if actual is not None else "") + ": ")
-            if entrada == "" and actual is not None:
-                return actual
-            return entrada
 
 def crearEntidad(entidades, campos):
     entidad = {}
@@ -121,7 +57,6 @@ def listarEntidades(entidades, campos):
             else:
                 print(f"{printCampo}: {datos[campo]}")
         print("---------------------------")
-        print()
 
 def eliminarEntidad(entidades, nombreEntidad="entidad"):
     print(f"Ingrese el ID de {nombreEntidad} a eliminar:")
@@ -132,6 +67,95 @@ def eliminarEntidad(entidades, nombreEntidad="entidad"):
     else:
         print(f"El ID de {nombreEntidad} no existe.")
     return entidades
+
+
+def printCamelCase(texto):
+    resultado = ""
+    for i, c in enumerate(texto):
+        if c.isupper() and i != 0:
+            resultado += " "
+        resultado += c
+    return resultado.capitalize()
+
+
+def inputCampo(campo, tipo, entidades=None, actual=None):
+    printCampo = printCamelCase(campo)
+    if isIdCampo(campo):
+        return handleIdCampo(entidades)
+    if tipo == dict:
+        return handleDictCampo(campo, printCampo, actual)
+    elif tipo == bool:
+        return handleBoolCampo(printCampo, actual)
+    elif tipo == int:
+        return handleIntCampo(printCampo, actual)
+    elif tipo == float:
+        return handleFloatCampo(printCampo, actual)
+    else:  # str u otros
+        return handleStrCampo(printCampo, actual)
+    
+def isIdCampo(campo):
+    return campo.lower() == "id"
+
+def handleIdCampo(entidades):
+    while True:
+        idEntidad = input("ID:")
+        if idEntidad in entidades:
+            print("El ID ya existe. Intente con otro.")
+        elif not idEntidad.strip():
+            print("El ID no puede estar vacío. Intente con otro.")
+        else:
+            return idEntidad
+
+def handleDictCampo(campo, printCampo, actual):
+    resultado = {} if actual is None else actual.copy()
+    contador = len(resultado) + 1
+    while True:
+        valor = input(f"Ingrese un valor para {printCampo} (o 'fin' para terminar): ")
+        if valor.lower() == "fin":
+            break
+        if not valor.strip():
+            print("El valor no puede estar vacío. Intente nuevamente.")
+            continue
+        resultado[f"{campo[:-1]}{contador}"] = valor
+        contador += 1
+    return resultado
+
+def handleBoolCampo(printCampo, actual):
+    if actual is not None:
+        entrada = input(f"{printCampo} (si/no, actual: {'sí' if actual else 'no'}): ").strip().lower()
+        if entrada == "":
+            return actual
+    else:
+        entrada = input(f"{printCampo} (si/no): ").strip().lower()
+    return entrada == "si"
+
+def handleIntCampo(printCampo, actual):
+    while True:
+        prompt = f"{printCampo}" + (f" (actual: {actual})" if actual is not None else "") + ": "
+        entrada = input(prompt)
+        if entrada == "" and actual is not None:
+            return actual
+        try:
+            return int(entrada)
+        except ValueError:
+            print("Debe ingresar un número entero.")
+
+def handleFloatCampo(printCampo, actual):
+    while True:
+        prompt = f"{printCampo}" + (f" (actual: {actual})" if actual is not None else "") + ": "
+        entrada = input(prompt)
+        if entrada == "" and actual is not None:
+            return actual
+        try:
+            return float(entrada)
+        except ValueError:
+            print("Debe ingresar un número decimal.")
+
+def handleStrCampo(printCampo, actual):
+    entrada = input(f"{printCampo}" + (f" (actual: {actual})" if actual is not None else "") + ": ")
+    if entrada == "" and actual is not None:
+        return actual
+    return entrada
 
 
 #----------------------------------------------------------------------------------------------
