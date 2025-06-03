@@ -244,15 +244,62 @@ def eliminarBanda(bandas):
 # EVENTOS
 #----------------------------------------------------------------------------------------------
 
-def registrarEvento(eventos):
-    ...
+def registrarEvento(eventos, salones, bandas):
+    print("Registro de evento")
+
+    id = input("Ingrese el ID del evento: ")
+    if id in eventos:
+        print("Ya existe un evento con ese ID.")
+    else:
+        fecha = input("Ingrese la fecha (formato libre): ")
+        idSalon = input("Ingrese el ID del salón: ")
+
+        if idSalon in salones:
+            idBanda = input("Ingrese el ID de la banda: ")
+            if idBanda in bandas:
+                eventos[id] = {
+                    "id": id,
+                    "fecha": fecha,
+                    "idSalon": idSalon,
+                    "idBanda": idBanda
+                }
+                print("Evento registrado correctamente.")
+            else:
+                print("El ID de la banda no existe.")
+        else:
+            print("El ID del salón no existe.")
+
     return eventos
 
 #----------------------------------------------------------------------------------------------
 # INFORMES
 #----------------------------------------------------------------------------------------------
 
+def salonConMasEventos(eventos, salones):
+    print("Salón con más eventos")
 
+    conteo = {}
+
+    for clave in eventos:
+        idSalon = eventos[clave]["idSalon"]
+        if idSalon in conteo:
+            conteo[idSalon] += 1
+        else:
+            conteo[idSalon] = 1
+
+    if len(conteo) == 0:
+        print("No hay eventos registrados.")
+    else:
+        maxEventos = 0
+        idSalonMax = ""
+
+        for idSalon in conteo:
+            if conteo[idSalon] > maxEventos:
+                maxEventos = conteo[idSalon]
+                idSalonMax = idSalon
+
+        nombreSalon = salones[idSalonMax]["nombre"]
+        print("El salón con más eventos es:", nombreSalon, "con", maxEventos, "evento(s).")
 
 #----------------------------------------------------------------------------------------------
 # CUERPO PRINCIPAL
@@ -296,7 +343,20 @@ def main():
                 }
         }
     }
-    eventos = {...}
+    eventos = {
+        "1": {
+            "id": "1",
+            "fecha": "2025-06-10",
+            "idSalon": "1",
+            "idBanda": "1"
+        },
+        "2": {
+            "id": "2",
+            "fecha": "2025-06-15",
+            "idSalon": "1",
+            "idBanda": "1"
+        }
+    }
 
 
 
