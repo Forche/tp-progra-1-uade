@@ -1,10 +1,13 @@
 """
 -----------------------------------------------------------------------------------------------
-Título:
-Fecha:
-Autor:
+Título: Entrega 1  TP
+Fecha: 03/06/2025
+Autor: Equipo 9
 
-Descripción:
+Descripción: 
+Se trata de un sistema informático para una empresa de entretenimiento que gestiona eventos musicales en salones propios. 
+El sistema permite registrar eventos en salones específicos y asignar bandas musicales a dichos eventos. 
+Se lleva control de disponibilidad de salones, datos de cada evento, horarios y costos asociados a las bandas contratadas por media hora de servicio.
 
 Pendientes:
 -----------------------------------------------------------------------------------------------
