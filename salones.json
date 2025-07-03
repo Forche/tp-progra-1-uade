@@ -1,0 +1,163 @@
+{
+    "1": {
+        "id": "1",
+        "activo": true,
+        "nombre": "Salón A",
+        "ubicacion": "Centro",
+        "capacidad": 200,
+        "email": "salonA@email.com",
+        "equipamientos": {
+            "equipamiento1": "Sonido",
+            "equipamiento2": "Luces",
+            "equipamiento3": "Pantalla"
+        },
+        "empleados": {
+            "empleado1": "Juan Pérez",
+            "empleado2": "Ana Gómez",
+            "empleado3": "Luis Díaz"
+        },
+        "accesoDiscapacitados": true
+    },
+    "2": {
+        "id": "2",
+        "activo": true,
+        "nombre": "Salón B",
+        "ubicacion": "Norte",
+        "capacidad": 150,
+        "email": "salonB@email.com",
+        "equipamientos": {
+            "equipamiento1": "Proyector",
+            "equipamiento2": "Micrófono"
+        },
+        "empleados": {
+            "empleado1": "María López",
+            "empleado2": "Pedro Ruiz"
+        },
+        "accesoDiscapacitados": false
+    },
+    "3": {
+        "id": "3",
+        "activo": true,
+        "nombre": "Salón C",
+        "ubicacion": "Sur",
+        "capacidad": 100,
+        "email": "salonC@email.com",
+        "equipamientos": {
+            "equipamiento1": "Pantalla LED"
+        },
+        "empleados": {
+            "empleado1": "Lucía Fernández"
+        },
+        "accesoDiscapacitados": true
+    },
+    "4": {
+        "id": "4",
+        "activo": true,
+        "nombre": "Salón D",
+        "ubicacion": "Este",
+        "capacidad": 250,
+        "email": "salonD@email.com",
+        "equipamientos": {
+            "equipamiento1": "Luces",
+            "equipamiento2": "Sonido"
+        },
+        "empleados": {
+            "empleado1": "Jorge Castro",
+            "empleado2": "Sonia Méndez"
+        },
+        "accesoDiscapacitados": true
+    },
+    "5": {
+        "id": "5",
+        "activo": true,
+        "nombre": "Salón E",
+        "ubicacion": "Oeste",
+        "capacidad": 180,
+        "email": "salonE@email.com",
+        "equipamientos": {
+            "equipamiento1": "Cámara"
+        },
+        "empleados": {
+            "empleado1": "Raúl Torres"
+        },
+        "accesoDiscapacitados": false
+    },
+    "6": {
+        "id": "6",
+        "activo": true,
+        "nombre": "Salón F",
+        "ubicacion": "Centro",
+        "capacidad": 220,
+        "email": "salonF@email.com",
+        "equipamientos": {
+            "equipamiento1": "Sonido",
+            "equipamiento2": "Luces"
+        },
+        "empleados": {
+            "empleado1": "Marta Díaz"
+        },
+        "accesoDiscapacitados": true
+    },
+    "7": {
+        "id": "7",
+        "activo": true,
+        "nombre": "Salón G",
+        "ubicacion": "Norte",
+        "capacidad": 90,
+        "email": "salonG@email.com",
+        "equipamientos": {
+            "equipamiento1": "Proyector"
+        },
+        "empleados": {
+            "empleado1": "Esteban Gil"
+        },
+        "accesoDiscapacitados": false
+    },
+    "8": {
+        "id": "8",
+        "activo": true,
+        "nombre": "Salón H",
+        "ubicacion": "Sur",
+        "capacidad": 300,
+        "email": "salonH@email.com",
+        "equipamientos": {
+            "equipamiento1": "Pantalla",
+            "equipamiento2": "Luces"
+        },
+        "empleados": {
+            "empleado1": "Paula Ríos"
+        },
+        "accesoDiscapacitados": true
+    },
+    "9": {
+        "id": "9",
+        "activo": true,
+        "nombre": "Salón I",
+        "ubicacion": "Este",
+        "email": "salonI@email.com",
+        "capacidad": 120,
+        "equipamientos": {
+            "equipamiento1": "Micrófono"
+        },
+        "empleados": {
+            "empleado1": "Diego Luna"
+        },
+        "accesoDiscapacitados": false
+    },
+    "10": {
+        "id": "10",
+        "activo": true,
+        "nombre": "Salón J",
+        "ubicacion": "Oeste",
+        "capacidad": 160,
+        "email": "salonJ@email.com",
+        "equipamientos": {
+            "equipamiento1": "Sonido",
+            "equipamiento2": "Pantalla"
+        },
+        "empleados": {
+            "empleado1": "Gabriela Vera"
+        },
+        "accesoDiscapacitados": true
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "1": {
+        "id": "1",
+        "activo": true,
+        "nombre": "Los Rockers",
+        "generoMusical": "Rock",
+        "costoMediaHora": 5000.0,
+        "email": "asd@pre.a",
+        "integrantes": {
+            "integrante1": "Carlos",
+            "integrante2": "Miguel",
+            "integrante3": "Sofía"
+        }
+    },
+    "2": {
+        "id": "2",
+        "activo": true,
+        "nombre": "Jazz Masters",
+        "generoMusical": "Jazz",
+        "costoMediaHora": 6000.0,
+        "email": "jazzmasters@email.com",
+        "integrantes": {
+            "integrante1": "Lucía",
+            "integrante2": "Martín"
+        }
+    },
+    "3": {
+        "id": "3",
+        "activo": true,
+        "nombre": "Pop Stars",
+        "generoMusical": "Pop",
+        "costoMediaHora": 5500.0,
+        "email": "popstars@email.com",
+        "integrantes": {
+            "integrante1": "Valeria",
+            "integrante2": "Tomás"
+        }
+    },
+    "4": {
+        "id": "4",
+        "activo": true,
+        "nombre": "Funkadelic",
+        "generoMusical": "Funk",
+        "costoMediaHora": 7000.0,
+        "email": "funkadelic@email.com",
+        "integrantes": {
+            "integrante1": "Sergio",
+            "integrante2": "Paula"
+        }
+    },
+    "5": {
+        "id": "5",
+        "activo": true,
+        "nombre": "Blues Band",
+        "generoMusical": "Blues",
+        "costoMediaHora": 4800.0,
+        "email": "bluesband@email.com",
+        "integrantes": {
+            "integrante1": "Javier",
+            "integrante2": "Marina"
+        }
+    },
+    "6": {
+        "id": "6",
+        "activo": true,
+        "nombre": "Electro Beats",
+        "generoMusical": "Electrónica",
+        "costoMediaHora": 8000.0,
+        "email": "electrobeats@email.com",
+        "integrantes": {
+            "integrante1": "Nicolás",
+            "integrante2": "Sofía"
+        }
+    },
+    "7": {
+        "id": "7",
+        "activo": true,
+        "nombre": "Cumbia Total",
+        "generoMusical": "Cumbia",
+        "costoMediaHora": 4000.0,
+        "email": "cumbiatotal@email.com",
+        "integrantes": {
+            "integrante1": "Ramiro",
+            "integrante2": "Carla"
+        }
+    },
+    "8": {
+        "id": "8",
+        "activo": true,
+        "nombre": "Ska Vivos",
+        "generoMusical": "Ska",
+        "costoMediaHora": 5200.0,
+        "email": "skavivos@email.com",
+        "integrantes": {
+            "integrante1": "Federico",
+            "integrante2": "Julieta"
+        }
+    },
+    "9": {
+        "id": "9",
+        "activo": true,
+        "nombre": "Metal Force",
+        "generoMusical": "Metal",
+        "costoMediaHora": 9000.0,
+        "email": "metalforce@email.com",
+        "integrantes": {
+            "integrante1": "Agustín",
+            "integrante2": "Brenda"
+        }
+    },
+    "10": {
+        "id": "10",
+        "activo": true,
+        "nombre": "Tango Club",
+        "generoMusical": "Tango",
+        "costoMediaHora": 4500.0,
+        "email": "tangoclub@email.com",
+        "integrantes": {
+            "integrante1": "Elena",
+            "integrante2": "Roberto"
+        }
+    }
+}
