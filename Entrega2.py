@@ -690,7 +690,7 @@ def leerArchivo(nombreArchivo):
     Retorna:
         dict: Diccionario con los datos leídos del archivo.
     """
-    
+    f = None
     try:
         f = open(nombreArchivo, 'r', encoding='utf-8')
         contenido = json.load(f)
@@ -698,7 +698,8 @@ def leerArchivo(nombreArchivo):
     except (FileNotFoundError, OSError, json.JSONDecodeError) as detalle:
         print("Error al intentar leer archivo(s):", nombreArchivo)
     finally:
-        f.close()
+        if f:
+            f.close()
 
     
 def guardarArchivo(nombreArchivo, datos):
@@ -710,6 +711,7 @@ def guardarArchivo(nombreArchivo, datos):
     Retorna:
         None
     """
+    f = None
     try:
         f = open(nombreArchivo, 'w', encoding='utf-8')
         json.dump(datos, f, indent=4, ensure_ascii=False)
@@ -717,7 +719,8 @@ def guardarArchivo(nombreArchivo, datos):
     except (FileNotFoundError, OSError) as detalle:
         print("Error al intentar guardar archivo(s):", nombreArchivo)
     finally:
-        f.close()
+        if f:
+            f.close()
 
 #----------------------------------------------------------------------------------------------
 # SALONES
