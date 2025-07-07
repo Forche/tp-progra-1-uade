@@ -5,7 +5,7 @@
         "nombre": "Los Rockers",
         "generoMusical": "Rock",
         "costoMediaHora": 5000.0,
-        "email": "asd@pre.a",
+        "email": "losrockers@email.com",
         "integrantes": {
             "integrante1": "Carlos",
             "integrante2": "Miguel",

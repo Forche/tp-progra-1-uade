@@ -5,7 +5,7 @@
         "nombre": "Salón A",
         "ubicacion": "Centro",
         "capacidad": 200,
-        "email": "mail@a.a",
+        "email": "salonA@email.com",
         "equipamientos": {
             "equipamiento1": "Sonido",
             "equipamiento2": "Luces",
