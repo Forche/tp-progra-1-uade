@@ -694,10 +694,11 @@ def leerArchivo(nombreArchivo):
     try:
         f = open(nombreArchivo, 'r', encoding='utf-8')
         contenido = json.load(f)
-        f.close()
         return contenido
     except (FileNotFoundError, OSError, json.JSONDecodeError) as detalle:
-        print("Error al intentar abrir archivo(s):", nombreArchivo)
+        print("Error al intentar leer archivo(s):", nombreArchivo)
+    finally:
+        f.close()
 
     
 def guardarArchivo(nombreArchivo, datos):
@@ -712,10 +713,11 @@ def guardarArchivo(nombreArchivo, datos):
     try:
         f = open(nombreArchivo, 'w', encoding='utf-8')
         json.dump(datos, f, indent=4, ensure_ascii=False)
-        f.close()
         print(f"Datos guardados en {nombreArchivo}.")
     except (FileNotFoundError, OSError) as detalle:
-        print("Error al intentar abrir archivo(s):", detalle)
+        print("Error al intentar guardar archivo(s):", nombreArchivo)
+    finally:
+        f.close()
 
 #----------------------------------------------------------------------------------------------
 # SALONES
@@ -1148,8 +1150,8 @@ def rankingCostoPorSalon():
                 try:
                     fecha = datetime.datetime.strptime(evento["fecha"], "%Y.%m.%d %H:%M:%S")
                 except Exception:
-                    continue
-                if fecha.year == anio:
+                     print(f"Error al procesar la fecha del evento: {evento['fecha']}")
+                if fecha and fecha.year == anio:
                     idBanda = evento.get("idBanda")
                     banda = bandas.get(idBanda)
                     if banda and estaActivo(banda):
